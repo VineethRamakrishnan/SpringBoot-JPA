@@ -37,20 +37,11 @@ public class Application {
     }
      
     private ApiInfo apiInfo() {
-         return new ApiInfoBuilder().title("AMC API")
-         .description("AMC API reference for demo")
+         return new ApiInfoBuilder().title("API")
+         .description(" API reference for demo")
          .version("1.0").build();
     }
     
-    /*@Configuration
-	protected static class JPAConfiguration{
-		
-
-		@Bean
-		public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
-			LocalContainerEntityManagerFactoryBean entityManagerFactory=new LocalContainerEntityManagerFactoryBean();
-			return entityManagerFactory;
-		}
-    }*/
+    
 }
 
