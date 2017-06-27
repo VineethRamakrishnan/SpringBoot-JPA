@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-//@RequestMapping("/api/v1")
+
 @RestController
 public class CustomerController {
 	
@@ -22,6 +22,7 @@ public class CustomerController {
 	
 	@Autowired
 	CustomerServiceImpl customer;
+	
 	public CustomerController() {
 		key=1;
 	}
