@@ -8,7 +8,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-        echo 'This is basic setup'
+        echo 'This is basic setup message'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'This is test setup message'
       }
     }
   }
