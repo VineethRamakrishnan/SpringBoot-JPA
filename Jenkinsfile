@@ -9,10 +9,10 @@ pipeline {
         
       }
       steps {
-        sh '''echo "Building project"
-mvn -version
+        sh '''mvn -version
 mvn clean install
-docker.build("samples/springboot-basic")
+def image = docker.build("samples/springboot-basic")
+
 
 '''
       }
