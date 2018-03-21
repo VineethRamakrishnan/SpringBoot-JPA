@@ -12,7 +12,8 @@ pipeline {
         sh '''echo "Building project"
 mvn -version
 mvn clean install
-docker run -t hello-world
+def output = sh(script: "docker build -t samples/springboot-basic.", returnStdout: true)
+println output
 '''
       }
     }
