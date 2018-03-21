@@ -12,8 +12,8 @@ pipeline {
         sh '''echo "Building project"
 mvn -version
 mvn clean install
-docker build -t samples/springboot-sample .
-docker run -d 9025:9025 samples/springboot-sample'''
+docker run -t hello-world
+'''
       }
     }
   }
