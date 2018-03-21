@@ -12,7 +12,7 @@ pipeline {
         sh '''echo "Building project"
 mvn -version
 mvn clean install
-sh "docker build -t samples/springboot-basic ."
+docker run -t hello-world
 
 '''
       }
