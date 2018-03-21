@@ -9,9 +9,22 @@ pipeline {
         
       }
       steps {
-        sh '''echo "Building project"
-mvn -version
-mvn clean install'''
+        sh '''mvn -version
+mvn clean install
+
+
+'''
+      }
+    }
+    stage('Docker') {
+      agent {
+        dockerfile {
+          filename 'Dockerfile'
+        }
+        
+      }
+      steps {
+        sh 'echo "Building Docker image"'
       }
     }
   }
