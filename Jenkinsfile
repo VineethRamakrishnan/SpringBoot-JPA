@@ -1,12 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Checkout') {
       steps {
-        echo 'This is basic setup'
+        checkout scm
       }
     }
-    stage('Test') {
+    stage('Build') {
       steps {
         echo 'This is basic setup'
       }
