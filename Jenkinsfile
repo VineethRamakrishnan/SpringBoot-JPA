@@ -14,10 +14,14 @@ pipeline {
       }
     }
     stage('Docker') {
+      agent {
+        dockerfile {
+          filename 'Dockerfile'
+        }
+        
+      }
       steps {
-        sh '''echo "Building Docker image"
-docker pull hello-world
-docker run hello-world'''
+        sh 'echo "Building Docker image"'
       }
     }
   }
