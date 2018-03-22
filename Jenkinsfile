@@ -16,8 +16,13 @@ mvn clean install
     }
     stage('Docker') {
       steps {
-        sh '''echo "Building Docker image"
-docker build -t samples/springboot-sample .'''
+        sh '''echo "Listing out the docker images"
+docker images'''
+      }
+    }
+    stage('Openshift Deployment') {
+      steps {
+        sh 'oc version'
       }
     }
   }
