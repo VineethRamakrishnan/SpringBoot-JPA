@@ -10,6 +10,7 @@ pipeline {
       }
       steps {
         sh '''mvn -version
+mvn clean install
 '''
       }
     }
@@ -17,8 +18,8 @@ pipeline {
       steps {
         sh '''echo "Listing out the docker images"
 docker images
-echo "Executing samples/springboot-basic Docker image"
-docker run -p 9025:9025 samples/springboot-basic'''
+echo "Executing samples/springboot-basic Docker image"'''
+        pwd(tmp: true)
       }
     }
     stage('Openshift Deployment') {
