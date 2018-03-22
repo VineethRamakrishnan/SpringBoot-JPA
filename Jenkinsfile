@@ -21,5 +21,10 @@ echo "Executing samples/springboot-basic Docker image"
 docker run -p 9025:9025 samples/springboot-basic'''
       }
     }
+    stage('Openshift Deployment') {
+      steps {
+        pwd(tmp: true)
+      }
+    }
   }
 }
