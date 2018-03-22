@@ -25,7 +25,7 @@ docker images'''
     }
     stage('Openshift Deployment') {
       steps {
-        sh '/scripts/openshift.sh'
+        sh './scripts/openshift.sh'
       }
     }
   }
