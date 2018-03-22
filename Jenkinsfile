@@ -20,7 +20,7 @@ mvn clean install
         sh '''echo "Listing out the docker images"
 docker images'''
         unstash 'springboot-sample-0.0.1-SNAPSHOT'
-        sh 'docker build -t samples/springboot-basic .'
+        sh 'docker build -t samples/springboot-basic-example .'
       }
     }
     stage('Openshift Deployment') {
@@ -32,7 +32,8 @@ docker images'''
         
       }
       steps {
-        sh './scripts/openshift.sh'
+        sh '''#./scripts/openshift.sh
+oc login $URL_OS_TEST --token=$TOKEN_OS_TEST --insecure-skip-tls-verify'''
       }
     }
   }
