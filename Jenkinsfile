@@ -24,6 +24,13 @@ docker images'''
       }
     }
     stage('Openshift Deployment') {
+      agent {
+        docker {
+          image 'java:8'
+          args '-u 0:0'
+        }
+        
+      }
       steps {
         sh './scripts/openshift.sh'
       }
