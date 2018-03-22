@@ -11,20 +11,13 @@ pipeline {
       steps {
         sh '''mvn -version
 mvn clean install
-
-
 '''
       }
     }
     stage('Docker') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile'
-        }
-        
-      }
       steps {
-        sh 'echo "Building Docker image"'
+        sh '''echo "Building Docker image"
+docker build -t samples/springboot-sample .'''
       }
     }
   }
