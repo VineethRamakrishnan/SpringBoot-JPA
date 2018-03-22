@@ -21,7 +21,10 @@ pipeline {
         
       }
       steps {
-        sh 'echo "Building Docker image"'
+        sh '''echo "Listing out the docker images"
+docker images
+echo "Executing samples/springboot-basic Docker image"
+docker run -p 9025:9025 samples/springboot-basic'''
       }
     }
   }
