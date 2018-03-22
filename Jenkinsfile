@@ -14,12 +14,6 @@ pipeline {
       }
     }
     stage('Docker') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile'
-        }
-        
-      }
       steps {
         sh '''echo "Listing out the docker images"
 docker images
