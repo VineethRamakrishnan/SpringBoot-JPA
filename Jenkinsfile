@@ -23,6 +23,9 @@ docker images'''
     stage('Openshift Deployment') {
       steps {
         sh '''echo "Deployment has been started"
+$PATH
+oc version
+echo "Version set"
 oc login $URL_OS_TEST --token=$TOKEN_OS_TEST --insecure-skip-tls-verify'''
       }
     }
