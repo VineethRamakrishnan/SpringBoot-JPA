@@ -17,7 +17,8 @@ mvn clean install
     stage('Docker') {
       steps {
         sh '''echo "Building Docker image"
-docker build -t samples/springboot-sample .'''
+docker pull hello-world
+docker run hello-world'''
       }
     }
   }
