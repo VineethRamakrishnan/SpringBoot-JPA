@@ -24,6 +24,10 @@ docker images'''
       steps {
         sh '''echo "Deployment has been started"
 $PATH
+echo "Path setup"
+export PATH=/home/centos/oc-tool:$PATH
+echo "After setup"
+$PATH
 oc version
 echo "Version set"
 oc login $URL_OS_TEST --token=$TOKEN_OS_TEST --insecure-skip-tls-verify'''
