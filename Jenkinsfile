@@ -17,14 +17,12 @@ mvn clean install
     stage('Docker') {
       steps {
         sh '''echo "Listing out the docker images"
-docker images
-echo "Executing samples/springboot-basic Docker image"'''
-        pwd(tmp: true)
+docker images'''
       }
     }
     stage('Openshift Deployment') {
       steps {
-        pwd(tmp: true)
+        sh 'echo "Deployment has been started"'
       }
     }
   }
