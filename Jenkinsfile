@@ -12,17 +12,20 @@ pipeline {
         sh '''mvn -version
 mvn clean install
 '''
+        stash(name: 'springboot-sample-0.0.1-SNAPSHOT', includes: '**/*.jar')
       }
     }
     stage('Docker') {
       steps {
         sh '''echo "Listing out the docker images"
 docker images'''
+        unstash 'springboot-sample-0.0.1-SNAPSHOT'
+        sh 'docker build -t samples/springboot-basic .'
       }
     }
     stage('Openshift Deployment') {
       steps {
-        sh 'oc version'
+        sh '/scripts/openshift.sh'
       }
     }
   }
